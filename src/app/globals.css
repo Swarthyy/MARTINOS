@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root { color-scheme: dark; --bg: #0b1111; --panel: #131b1b; --line: #263433; --muted: #91a5a1; --text: #ecf3ee; --green: #b9e97f; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: Arial, Helvetica, sans-serif; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .55; }
+.app-shell { min-height: 100vh; background: radial-gradient(circle at 85% -10%, #1b302b 0, transparent 34%), var(--bg); }
+.sidebar { background: #0e1616; border-right: 1px solid var(--line); }
+.panel { background: linear-gradient(150deg, #162120, #111a1a); border: 1px solid var(--line); border-radius: 20px; }
+.eyebrow { color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.muted { color: var(--muted); }
+.btn-primary { background: var(--green); color: #102013; border-radius: 11px; padding: 11px 16px; font-size: 13px; font-weight: 700; }
+.btn-quiet { border: 1px solid #3b4d48; border-radius: 11px; padding: 10px 15px; font-size: 13px; font-weight: 650; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; background: #7e9992; }
+.status-dot.connected { background: #b9e97f; }
+.status-dot.imported { background: #91c6e4; }
+.status-dot.attention { background: #efbb74; }
+.gradient-card { background: radial-gradient(circle at 75% 20%, #355a42, transparent 45%), linear-gradient(135deg, #243b30, #182823); }
+.fine-grid { background-image: linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg, #ffffff08 1px, transparent 1px); background-size: 28px 28px; }
+input[type="email"], input[type="text"] { background: #0e1716; border: 1px solid #354541; border-radius: 11px; color: white; padding: 11px 13px; width: 100%; outline: none; }
+input:focus { border-color: var(--green); }
