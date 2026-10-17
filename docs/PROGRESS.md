@@ -10,3 +10,9 @@
 - The Supabase schema and signed-in import flow remain untested because there is no project or owner account configured. Native Latitude export fields and browser access remain unverified.
 
 Next session: configure Supabase, apply schema, test authenticated import and duplicate handling, then inspect Latitude export options in a permitted signed-in browser session. Do not claim a live Latitude connection before that experiment.
+
+## 2026-10-17 — read-only cloud bank API pilot
+
+- Narrowed the immediate task to an API ChatGPT can query. Built a bounded, read-only Up Bank adapter and `GET /api/chatgpt/bank`, protected by a separate action key. Added an OpenAPI Action definition and deployment instructions.
+- Mocked tests cover authentication, live response shape, safe upstream errors, pagination host validation, and omission of bank account identifiers. Typecheck and production build pass.
+- This is **not deployed** and has no live bank access: no Up token, public hosting credentials, or ChatGPT Action setup are present in this cloud task. The restricted cloud network policy does not list `api.up.com.au`. Bank selection and ChatGPT connection type are pending Martin's reply.

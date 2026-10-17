@@ -31,5 +31,6 @@ The Latitude importer accepts the normalized [`latitude-template.csv`](public/la
 - [Latitude investigation and import handoff](docs/LATITUDE.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Progress log](docs/PROGRESS.md)
+- [Read-only bank API pilot](docs/BANK_API.md)
 
 The project began in an empty GitHub repository. This foundation is the first project revision.

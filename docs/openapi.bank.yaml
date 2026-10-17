@@ -1,0 +1,78 @@
+openapi: 3.1.0
+info:
+  title: Martin OS read-only bank snapshot
+  version: 0.1.0
+  description: Returns a live, bounded snapshot from Up Bank. No payment or account-change operation exists.
+servers:
+  - url: https://REPLACE_WITH_YOUR_HTTPS_DEPLOYMENT
+paths:
+  /api/chatgpt/bank:
+    get:
+      operationId: getBankSnapshot
+      summary: Read current account balances and recent transactions
+      description: Fetches Up Bank at request time. Amounts are integer minor units (cents for AUD). Returns source and fetchedAt so freshness is explicit.
+      security:
+        - actionKey: []
+      parameters:
+        - in: query
+          name: days
+          required: false
+          description: Number of days of transactions, from 1 to 90. Default is 30.
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 90
+            default: 30
+      responses:
+        "200":
+          description: Live bank snapshot
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [source, fetchedAt, periodDays, accounts, accountsTruncated, transactions, transactionsTruncated]
+                properties:
+                  source:
+                    type: string
+                    const: up_bank
+                  fetchedAt:
+                    type: string
+                    format: date-time
+                  periodDays:
+                    type: integer
+                  accountsTruncated:
+                    type: boolean
+                  transactionsTruncated:
+                    type: boolean
+                  accounts:
+                    type: array
+                    items:
+                      type: object
+                      required: [name, type, balanceMinor, currency]
+                      properties:
+                        name: { type: string }
+                        type: { type: string }
+                        balanceMinor: { type: integer }
+                        currency: { type: string }
+                  transactions:
+                    type: array
+                    items:
+                      type: object
+                      required: [date, description, amountMinor, currency, status, accountName]
+                      properties:
+                        date: { type: string, format: date-time }
+                        description: { type: string }
+                        amountMinor: { type: integer }
+                        currency: { type: string }
+                        status: { type: string }
+                        accountName: { type: [string, "null"] }
+        "401":
+          description: Missing or invalid action key
+        "503":
+          description: Configuration missing or bank temporarily unavailable
+components:
+  securitySchemes:
+    actionKey:
+      type: http
+      scheme: bearer
+      description: Set this to the deployment's MARTIN_OS_ACTION_KEY, never the Up Bank token.
