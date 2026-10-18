@@ -16,3 +16,10 @@ Next session: configure Supabase, apply schema, test authenticated import and du
 - Narrowed the immediate task to an API ChatGPT can query. Built a bounded, read-only Up Bank adapter and `GET /api/chatgpt/bank`, protected by a separate action key. Added an OpenAPI Action definition and deployment instructions.
 - Mocked tests cover authentication, live response shape, safe upstream errors, pagination host validation, and omission of bank account identifiers. Typecheck and production build pass.
 - This is **not deployed** and has no live bank access: no Up token, public hosting credentials, or ChatGPT Action setup are present in this cloud task. The restricted cloud network policy does not list `api.up.com.au`. Bank selection and ChatGPT connection type are pending Martin's reply.
+
+## 2026-10-18 — Up Bank confirmed
+
+- Martin confirmed Up Bank as the first source and Latitude second.
+- Saved `api.up.com.au` and `developer.up.com.au` in the cloud environment draft, plus a secure `UP_API_TOKEN` requirement for cloud-side validation. The draft is not published and the running network policy has not changed.
+- Confirmed Node 24 can reach an allowed domain through the managed proxy using `NODE_OPTIONS=--use-env-proxy`; this flag is needed when testing the Up adapter inside the cloud environment.
+- Added GitHub CI for clean install, typecheck, tests, and build. Live Up verification and deployment remain dependent on secure token entry and a hosting account.

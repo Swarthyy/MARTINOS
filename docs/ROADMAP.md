@@ -11,7 +11,8 @@
 ## Finance pilot
 
 - [x] Build a protected read-only Up Bank API route and Custom GPT Action schema against mocked bank responses.
-- [ ] Confirm first bank, deploy to HTTPS, configure secrets privately, and verify against live bank data.
+- [x] Confirm Up Bank as the first source, with Latitude second.
+- [ ] Deploy to HTTPS, configure secrets privately, and verify against live Up Bank data.
 - [ ] Connect the Action to the intended private GPT; test access, freshness, and revocation.
 - [ ] Inspect Latitude account export/browser options with Martin in an authorized signed-in session.
 - [ ] Adapt native export format or reviewed PDF; model balances, statement obligations, interest-free plans, and due dates.
