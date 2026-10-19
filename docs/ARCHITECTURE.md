@@ -44,3 +44,7 @@ Each future agent receives an explicit read scope and a set of draft action type
 1. Choose where the private Supabase project and eventual web app should live (region and hosting). Australia is a sensible default if available near the user's financial sources.
 2. Decide whether Martin OS stays single-user or should support assistants/coaches as separate roles. Current database is user-owned and is safe to extend, but shared access needs a new authorization model.
 3. Set a financial data retention and backup policy before real imports.
+
+## Decision 004 — hybrid persistent memory
+
+See [ADR 004](decisions/004-memory.md) and [Memory deployment guide](MEMORY.md). OpenAI Conversations owns chat history; owner-scoped Supabase records own confirmed operational facts, source provenance, immutable corrections and session mappings. The model proposes updates; the owner confirms individual records. Availability uses confirmed local-time routines and dated exceptions, and reports calendar coverage as unknown. Up Bank and Latitude remain separate.
