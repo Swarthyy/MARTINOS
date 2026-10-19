@@ -25,3 +25,13 @@
 - [ ] Add scheduler, retry/backoff, source sync logs, data freshness alerts, and OAuth token lifecycle handling.
 - [ ] Add read-only agent summaries with cited source records, then draft action approvals and audited executors.
 - [ ] Expand to subscriptions, tax reserve, coaching relationships, and cross-domain pattern analysis.
+
+## Mission 004-B — memory foundation
+
+- [x] Document hybrid OpenAI Conversations + Supabase architecture.
+- [x] Implement persistent conversation mappings and bounded agent tools.
+- [x] Add confirmed operating facts, reviewable corrections, recurring routines and dated exceptions.
+- [x] Add Memory & Routines interface and DST-aware availability.
+- [x] Verify actual migration/RLS, mocked-provider workflow and database reopening locally.
+- [ ] Apply migration to configured Supabase, run advisors, and verify signed-in workflow against live OpenAI.
+- [ ] Connect trusted calendar coverage and future voice adapters; current unblocked windows remain unknown overall availability.

@@ -23,3 +23,14 @@ Next session: configure Supabase, apply schema, test authenticated import and du
 - Saved `api.up.com.au` and `developer.up.com.au` in the cloud environment draft, plus a secure `UP_API_TOKEN` requirement for cloud-side validation. The draft is not published and the running network policy has not changed.
 - Confirmed Node 24 can reach an allowed domain through the managed proxy using `NODE_OPTIONS=--use-env-proxy`; this flag is needed when testing the Up adapter inside the cloud environment.
 - Added GitHub CI for clean install, typecheck, tests, and build. Live Up verification and deployment remain dependent on secure token entry and a hosting account.
+
+## 2026-10-19 — Mission 004-B persistent memory
+
+- Audited existing authentication, schema, integrations and agent gaps; reviewed official OpenAI sessions, Conversations, compaction and sandbox-memory documentation. Recorded ADR 004 before implementation.
+- Added owner-scoped operating memories, immutable version history, source quotes, pending/inferred/confirmed/outdated states, atomic review/correction, one-date cancellations and database session leases in an additive migration. No real owner routines were seeded.
+- Added OpenAI Conversations/Responses runtime, bounded context retrieval, owner-only confirmation, summary rollover and interruption handling. Browser session IDs resolve to server-side owner mappings; no bank Action key grants memory access.
+- Added Memory & Routines UI and timezone-aware routine availability, with unknown calendar coverage and rejection of ambiguous/nonexistent DST times. Preserved Up Bank code and configuration.
+- Executed the migration and eight-step mocked-provider workflow in PGlite, including RLS and persistence across database reopening; added boundary, precedence, overlap, DST and dependency-failure tests. See docs/MEMORY.md for deployment and limitations.
+- The Supabase connector inventory contains only inactive projects and no project is linked to this checkout. No Supabase/OpenAI app credentials are configured. Live provider behavior, signed-in browser flow, project migration application and Supabase advisors remain deployment checks; local tests do not establish a production deployment.
+
+Verification result: automated suite and added recurrence regressions pass; TypeScript and the production build pass. Local production HTTP checks returned 200 for `/memory` and 401 for unauthenticated memory/chat APIs. No live deployment was performed.

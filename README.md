@@ -34,3 +34,7 @@ The Latitude importer accepts the normalized [`latitude-template.csv`](public/la
 - [Read-only bank API pilot](docs/BANK_API.md)
 
 The project began in an empty GitHub repository. This foundation is the first project revision.
+
+## Persistent memory
+
+[Memory & Routines setup, tools, verification and deployment](docs/MEMORY.md) describes the additive memory migration and server OpenAI configuration. [ADR 004](docs/decisions/004-memory.md) records the OpenAI/Supabase responsibilities and research. No provisional work schedule is seeded.

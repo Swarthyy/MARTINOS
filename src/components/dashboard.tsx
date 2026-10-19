@@ -46,6 +46,7 @@ export function Dashboard({ configured, email, connections, importCount, schemaE
       <nav className="mt-3 space-y-1" aria-label="Main navigation">
         <a className="flex items-center gap-3 rounded-xl bg-[#1e3028] px-4 py-3 text-sm text-[#c7ef9e]" href="#overview" onClick={() => setMobileMenu(false)}><LayoutGrid size={17}/>Overview</a>
         <a className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-[#9fb0aa] hover:bg-[#1b2926]" href="#integrations" onClick={() => setMobileMenu(false)}><PlugZap size={17}/>Integrations</a>
+        <a className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-[#9fb0aa] hover:bg-[#1b2926]" href="/memory">Memory & Routines</a>
         <a className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-[#9fb0aa] hover:bg-[#1b2926]" href="#latitude" onClick={() => setMobileMenu(false)}><FileUp size={17}/>Imports</a>
       </nav>
       <div className="mt-auto panel p-4"><div className="flex items-center gap-2 text-xs font-semibold"><ShieldCheck size={16} className="text-[#b9e97f]"/>Data integrity</div><p className="muted mt-2 text-xs leading-5">No metrics appear until a connected source supplies them. Every source shows its status and freshness.</p></div>
